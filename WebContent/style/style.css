@@ -1,1 +1,82 @@
 /* Add styles for truYum application here */
+body{
+		height: 100%;
+}
+header{
+		height: 80px;
+		background-color: #3381ff;
+		color: #ffffff;
+}
+footer{
+		height: 50px;
+		background-color: #c3c6c9;
+	
+}
+div{
+		height: 300px;
+}
+img{
+	height: 50px;
+	width: 50px;
+}	
+#title{
+		font-size: 25pt;
+		margin-left: 10px;
+		margin-top: 10px;
+		color: #ffffff;
+}
+#logo{
+		width: 50px;
+		height: 50px;
+		margin-left: 30px;
+		margin-top: 10px;
+		
+}
+nav{
+		float: right;
+		margin-right: 50px;
+		margin-top: 30px;
+}
+#menu{
+	color: #ffffff;
+}
+#cart{
+	color: #ffffff;
+}	
+h3{
+			margin-left: 100px;
+}			
+table{
+			margin-left: 80px;
+}
+h4{
+			color: #6df792;
+			margin-left: 100px;
+}	
+h5{
+			margin-left: 100px;
+}
+.al-left{
+			text-align: left; 
+}
+.al-right{
+			text-align: right;
+}
+.al-mid{
+			text-align: center;
+}
+.cont{
+			margin-left: 200px;
+			font-size: 15pt;
+			width: 1000px;
+			padding: 30px;
+}
+.color{
+			background-color: #313f87;
+			color: #faf9f7;
+			height: 30px;
+			width: 70px;
+}	
+#cpw{
+			margin-left: 10px;
+}			
