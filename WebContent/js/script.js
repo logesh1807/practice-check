@@ -1,5 +1,5 @@
 function validation(){
-					var a = document.forms["forms"]["txtName"].value;
+					var a = document.forms["form"]["txtName"].value;
 					if(a==""){
 								alert("Title is Required");
 								return false;
@@ -8,7 +8,7 @@ function validation(){
 								alert("Title should have 2to65 characters.");
 								return false;
 					}
-					var b = document.forms["forms"]["txtPrice"].value;
+					var b = document.forms["form"]["txtPrice"].value;
 					if(b==""){
 								alert("Price is required.");
 								return false;
@@ -17,13 +17,14 @@ function validation(){
 								alert("Price has to be a number.");
 								return false;
 					}
-					var c = document.forms["forms"]["txtDoL"].value;
+					var c = document.forms["form"]["txtDoL"].value;
 					if(c==""){
 								alert("Date of Launch is required.");
 								return false;
 					}
-					var d= document.forms["forms"]["catrgory"].value;
+					var d= document.forms["form"]["catrgory"].value;
 					if(d==""){
 								alert("Category is required.");
 								return false;
 					}
+}
