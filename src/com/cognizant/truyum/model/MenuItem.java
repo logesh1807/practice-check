@@ -114,4 +114,9 @@ public class MenuItem {
 				sdf.format(dateOfLaunch), category, freeDelivery ? "Yes" : "No");
 	}
 
+	public static void modifyMenuItem(MenuItem menuItem) {
+		// TODO Auto-generated method stub
+
+	}
+
 }

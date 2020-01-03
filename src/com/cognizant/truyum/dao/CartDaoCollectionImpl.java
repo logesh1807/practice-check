@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
 
+import com.cognizant.truyum.model.Cart;
 import com.cognizant.truyum.model.MenuItem;
 
 public class CartDaoCollectionImpl implements CartDao {
@@ -54,8 +55,13 @@ public class CartDaoCollectionImpl implements CartDao {
 	}
 
 	@Override
-	public void removeCartItem(long userId, long menuItemId) {
+	public void removeCartItem(long userId, long menuItemId) throws CartEmptyException {
 		List<MenuItem> menuItemList = userCarts.get(userId).getMenuItemList();
+
+		if (menuItemList == null || menuItemList.isEmpty()) {
+			throw new CartEmptyException();
+		}
+
 		for (int i = 0; i < menuItemList.size(); i++) {
 			if (menuItemList.get(i).getId() == menuItemId) {
 				menuItemList.remove(i);

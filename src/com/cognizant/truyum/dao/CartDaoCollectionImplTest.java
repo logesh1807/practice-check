@@ -20,6 +20,7 @@ public class CartDaoCollectionImplTest {
 
 	public static void testRemoveCartItem() throws CartEmptyException {
 		CartDao cartDao = new CartDaoCollectionImpl();
+
 		System.out.println("Item List for Customer after Remove");
 		try {
 			cartDao.removeCartItem(1, 2L);

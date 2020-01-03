@@ -1,4 +1,4 @@
-package com.cognizant.truyum.dao;
+package com.cognizant.truyum.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class Cart {
 		return total;
 	}
 
-	public void settotal() {
+	public void settotal(double total) {
 		this.total = total;
 	}
 
