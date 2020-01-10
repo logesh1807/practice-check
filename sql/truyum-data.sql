@@ -28,7 +28,8 @@ select*from user;
 -- customer menu item list
 -- -------------------------------------------------------------------
 
-select me_name, me_free_delivery, me_price, me_category from menu_item
+select me_name, me_free_delivery, me_price, me_category 
+from menu_item
 where me_active ='yes' and me_date_of_launch <= (select(curdate()));
 
 
@@ -46,18 +47,22 @@ insert into cart(ct_us_id,ct_pr_id) values (1,3);
 -- View cart items
 -- -------------------------------------------------------------------
 
-select me_name,me_free_delivery, me_price  from menu_item
-inner join cart on ct_pr_id=me_id
+select me_name,me_free_delivery, me_price  
+from menu_item
+inner join cart 
+on ct_pr_id=me_id
 where ct_us_id=1;
 
 -- -------------------------------------------------------------------
 -- View cart total
 -- -------------------------------------------------------------------
 
-select sum(me_price) as Total from menu_item
-inner join cart on ct_pr_id=me_id
+select sum(me_price) 
+as Total 
+from menu_item
+inner join cart 
+on ct_pr_id=me_id
 where ct_us_id=1;
-
 
 -- ------------------------------------------------------------------
 -- Remove Item From cart
@@ -65,11 +70,17 @@ where ct_us_id=1;
 
 delete from cart where ct_us_id=1 and ct_id=3;
 
+-- -------------------------------------------------------------------
+-- View romoved cart items
+-- -------------------------------------------------------------------
 
-select sum(me_price) as Total from menu_item
-inner join cart on ct_pr_id=me_id
+select me_name,me_free_delivery, me_price  
+from menu_item
+inner join cart 
+on ct_pr_id=me_id
 where ct_us_id=1;
 
-delete from cart;
+
+
 
 select * from cart;
