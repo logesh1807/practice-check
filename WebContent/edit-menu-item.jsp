@@ -48,7 +48,8 @@
 				</tr>
 				<tr>
 					<td colspan="2"><input type="checkbox" id="cbDelivery"
-						name="cbDelivery" checked>freeDelivery</td>
+						name="cbDelivery" checked><c:if test="${menu.freeDelivery }">Yes</c:if>
+						<c:if test="${!menu.freeDelivery }">No</c:if></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input class="color" type="submit"

@@ -20,6 +20,7 @@
 				<th class="al-right">Price</th>
 				<th class="al-mid">Active</th>
 				<th class="al-mid">Date of Launch</th>
+				<th class="al-mid">Category</th>
 				<th class="al-mid">Free Delivery</th>
 				<th class="al-mid">Action</th>
 			</tr>
@@ -33,7 +34,8 @@
 					<td class="al-mid"><fmt:formatDate pattern="dd/MM/yyyy"
 							value="${menu.dateOfLaunch }"></fmt:formatDate></td>
 					<td class="al-mid">${menu.category }</td>
-					<td class="al-mid">${menu.freeDelivery }</td>
+					<td class="al-mid"><c:if test="${menu.freeDelivery }">Yes</c:if>
+						<c:if test="${!menu.freeDelivery }">No</c:if></td>
 					<td class="al-mid"><a
 						href="ShowEditMenuItem?menuItemId=${menu.id }" target="_blank">Edit
 					</a></td>

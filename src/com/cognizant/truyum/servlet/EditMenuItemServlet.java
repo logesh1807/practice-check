@@ -60,7 +60,7 @@ public class EditMenuItemServlet extends HttpServlet {
 
 			MenuItemDao menuItemDao = new MenuItemDaoCollectionImpl();
 
-			MenuItem.modifyMenuItem(menuItem);
+			menuItemDao.modifyMenuItem(menuItem);
 			request.setAttribute("msg", "Menu Item edited successfully ");
 			RequestDispatcher rd = request.getRequestDispatcher("edit-menu-item-status.jsp");
 			rd.forward(request, response);
