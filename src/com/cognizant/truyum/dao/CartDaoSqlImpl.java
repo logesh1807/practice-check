@@ -66,13 +66,13 @@ public class CartDaoSqlImpl implements CartDao {
 
 	@Override
 	public void removeCartItem(long userId, long menuItemId) throws CartEmptyException {
-		String sql = "delete from cart(ct_us_id,ct_pr_id) values(?,?)";
+		String sql = "delete from cart where ct_us_id=? and ct_pr_id=? limit 1";
 		Connection con = ConnectionHandler.getConnection();
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setInt(1, 2);
-			ps.setInt(1, 5);
-			int result = ps.executeUpdate();
+			ps.setLong(1, userId);
+			ps.setLong(2, menuItemId);
+			ps.executeUpdate();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
