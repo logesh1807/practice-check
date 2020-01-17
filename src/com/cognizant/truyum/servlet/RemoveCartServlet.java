@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cognizant.truyum.dao.CartDao;
 import com.cognizant.truyum.dao.CartDaoCollectionImpl;
+import com.cognizant.truyum.dao.CartDaoSqlImpl;
 
 /**
  * Servlet implementation class RemoveCartServlet
@@ -36,7 +37,7 @@ public class RemoveCartServlet extends HttpServlet {
 		try {
 
 			Long menuItemId = Long.parseLong(request.getParameter("menuItemId"));
-			CartDao cartDao = new CartDaoCollectionImpl();
+			CartDao cartDao = new CartDaoSqlImpl();
 			cartDao.removeCartItem(1, menuItemId);
 			request.setAttribute("msg", "Item removed from cart successfully");
 			RequestDispatcher rd = request.getRequestDispatcher("ShowCart");

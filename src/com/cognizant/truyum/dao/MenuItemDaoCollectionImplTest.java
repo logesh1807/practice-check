@@ -26,11 +26,15 @@ public class MenuItemDaoCollectionImplTest {
 	}
 
 	public static void testGetMenuItemListAdmin() throws ParseException {
+		try {
 		MenuItemDao menuItemDao = new MenuItemDaoCollectionImpl();
 		menuItemDao.getMenuItemListAdmin();
 		List<MenuItem> menuItemList = menuItemDao.getMenuItemListAdmin();
 		for (MenuItem x : menuItemList) {
 			System.out.println(x);
+		}
+		}catch(Exception ex){
+			ex.printStackTrace();
 		}
 	}
 

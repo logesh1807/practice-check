@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cognizant.truyum.dao.CartDao;
 import com.cognizant.truyum.dao.CartDaoCollectionImpl;
+import com.cognizant.truyum.dao.CartDaoSqlImpl;
 import com.cognizant.truyum.dao.MenuItemDao;
 import com.cognizant.truyum.dao.MenuItemDaoCollectionImpl;
 
@@ -39,7 +40,7 @@ public class AddToCartServlet extends HttpServlet {
 
 		try {
 			Long menuItemId = Long.parseLong(request.getParameter("menuItemId"));
-			CartDao cartDao = new CartDaoCollectionImpl();
+			CartDao cartDao = new CartDaoSqlImpl();
 			cartDao.addCartItem(1, menuItemId);
 			request.setAttribute("msg", "Item added to cart successfully");
 			RequestDispatcher rd = request.getRequestDispatcher("ShowMenuItemListCustomer");
